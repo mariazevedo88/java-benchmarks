@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
+  
+  	<groupId>io.github.mariazevedo88</groupId>
+  	<artifactId>java-benchmarks</artifactId>
+  	<version>1.0.0-SNAPSHOT</version>
+	
+  	<name>java-benchmarks</name>
+  	<description>A project to get benchmarks of Java types and data structures</description>
+	
+	<developers>
+		<developer>
+			<name>Mariana Azevedo</name>
+			<email>mariana@bsi.ufla.br</email>
+			<timezone>UTC-03:00</timezone>
+		</developer>
+	</developers>
+	
+	<properties>
+		<java.version>11</java.version>
+		<jmh-core.version>1.25</jmh-core.version>
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+	</properties>
+  	
+  	<dependencies>
+	  	<dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-core</artifactId>
+            <version>${jmh-core.version}</version>
+        </dependency>
+		<dependency>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-generator-annprocess</artifactId>
+            <version>${jmh-core.version}</version>
+            <scope>test</scope>
+        </dependency>
+  	</dependencies>
+  	
+  	<build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+	
+</project>
